@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='ja'>
+    <head>
+        <meta charset="utf-8">
+        <title>MAZE SYSTEM</title>
+        <link href="./style.css" rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="sample.js"></script>
+
+
+        
+    </head>
+
+    <body id="bd">
+        <script>
+            for(let i=0; i< 4; i++){
+               
+            }
+        </script>
+        <h1>MAZE SYSTEM</h1>
+            <div id="div1"></div>
+          
+            <script language="javascript" type="text/javascript">
+              var b = document.getElementById("bd");
+              for(let i=0; i<10; i++){
+                  var new_button = document.createElement('button');
+                  const newimg = document.createElement("img");
+                  console.log("../maze_system_imagedata/origin_maze_correctpath/origin_maze_correctpath_"+i+".png");
+                  newimg.src = "../maze_system_imagedata/origin_maze_correctpath/origin_maze_correctpath_"+i+".png";
+                  newimg.width=300;
+                  newimg.height=300;
+                  new_button.appendChild(newimg)
+                  new_button.onclick = function(){
+                        var url = "transition_page.html?num="+i;
+                        location.href = url;
+                        console.log(url);
+                   };
+                  b.appendChild(new_button);
+              }
+            </script>
+
+    </body>
+
+
+</html>
