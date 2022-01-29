@@ -18,22 +18,33 @@
             }
         </script>
         <h1>MAZE SYSTEM</h1>
+            <div id="color_list"></div>
             <div id="div1"></div>
-          
             <script language="javascript" type="text/javascript">
               var b = document.getElementById("bd");
+              function csv_data(dataPath) {
+                console.log(dataPath);
                 const request = new XMLHttpRequest(); // HTTPでファイルを読み込む
                 request.addEventListener('load', (event) => { // ロードさせ実行
                     const response = event.target.responseText; // 受け取ったテキストを返す
-                    //csv_array(response); //csv_arrayの関数を実行
-                    const dataArray = []; //配列を用意
-                    const dataString = response.split('\n'); //改行で分割
-                    for (let i = 0; i < dataString.length; i++) { //あるだけループ
-                        dataArray[i] = dataString[i].split(',');
-                    }
+                    csv_array(response); //csv_arrayの関数を実行
                 });
-                request.open('GET', "./name_base64code_taiou.csv", true); // csvのパスを指定
+                request.open('GET', dataPath, true); // csvのパスを指定
                 request.send();
+            }
+
+            function csv_array(data) {
+                const dataArray = []; //配列を用意
+                const dataString = data.split('\n'); //改行で分割
+                for (let i = 0; i < dataString.length; i++) { //あるだけループ
+                    dataArray[i] = dataString[i].split(',');
+                }
+                output_csv.innerHTML = dataArray; //表示
+                console.log(dataArray);
+
+            }
+
+            csv_data("./name_base64code_taiou.csv")
 
 
               for(let i=0; i<10; i++){
