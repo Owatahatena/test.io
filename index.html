@@ -13,6 +13,12 @@
 
     <body id="bd">
         <script>
+            const output_csv = document.getElementById('color_list');
+            csv_data("./name_base64code_taiou.csv")
+        </script>
+
+
+        <script>
             for(let i=0; i< 4; i++){
                
             }
@@ -25,13 +31,13 @@
               for(let i=0; i<10; i++){
                   var new_button = document.createElement('button');
                   const newimg = document.createElement("img");
-                  console.log("./maze_system_imagedata/origin_maze_correctpath/origin_maze_correctpath_"+i+".png");
-                  newimg.src = "./maze_system_imagedata/origin_maze_correctpath/origin_maze_correctpath_"+i+".png";
+                  console.log("../maze_system_imagedata/origin_maze_correctpath/origin_maze_correctpath_"+i+".png");
+                  newimg.src = "../maze_system_imagedata/origin_maze_correctpath/origin_maze_correctpath_"+i+".png";
                   newimg.width=300;
                   newimg.height=300;
                   new_button.appendChild(newimg)
                   new_button.onclick = function(){
-                        var url = "transition_page.html?num="+i;
+                        var url = "transition_page.html?num=W19H19S1,1E17,17/+IiOzdxR50wN/RHSttSNsy7U2tAv/";
                         location.href = url;
                         console.log(url);
                    };

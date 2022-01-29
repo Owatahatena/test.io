@@ -37,73 +37,62 @@
         }
 
         csv_data("./MasterMazeData_features_df_17.csv")
+        var url = new URL(window.location.href);
+        var params = url.searchParams;
+        var b = document.getElementById("bd");
+        var num = params.get('num');
+        num = num.replace('/','_');
+
+        var maze_name = document.createElement("h2");
+        maze_name.innerHTML="MAZE "+num;
+        b.appendChild(maze_name);
 
 
+        console.log(num);
 
+        var newimg = document.createElement("img");
+        newimg.src = "../maze_system_imagedata/origin_maze/origin_maze_"+num+".png";
+        newimg.width=300;
+        newimg.height=300;
+        b.appendChild(newimg);
 
+        var newimg = document.createElement("img");
+        newimg.src = "../maze_system_imagedata/origin_maze_correctpath/origin_maze_correctpath_"+num+".png";
+        newimg.width=300;
+        newimg.height=300;
+        b.appendChild(newimg);
 
+        var newimg = document.createElement("img");
+        newimg.src = "../maze_system_imagedata/thin_wall_maze/thin_wall_maze_"+num+".png";
+        newimg.width=300;
+        newimg.height=300;
+        b.appendChild(newimg);
 
+        var newimg = document.createElement("img");
+        newimg.src = "../maze_system_imagedata/red_arrow_maze/red_arrow_maze_"+num+".png";
+        newimg.width=300;
+        newimg.height=300;
+        b.appendChild(newimg);
 
+        var  newimg = document.createElement("img");
+        newimg.src = "../maze_system_imagedata/blue_arrow_maze/blue_arrow_maze_"+num+".png";
+        newimg.width=300;
+        newimg.height=300;
+        b.appendChild(newimg);
 
+        var newimg = document.createElement("img");
+        newimg.src = "../maze_system_imagedata/idea_maze/idea_maze_"+num+".png";
+        newimg.width=300;
+        newimg.height=300;
+        b.appendChild(newimg);
 
+        var newimg = document.createElement("img");
+        newimg.src = "../maze_system_imagedata/himohari_idea_maze/himohari_idea_maze_"+num+".png";
+        newimg.width=300;
+        newimg.height=300;
+        b.appendChild(newimg);
 
-
-
-            var url = new URL(window.location.href);
-            var params = url.searchParams;
-            var b = document.getElementById("bd");
-            var num = params.get('num');
-
-            var maze_name = document.createElement("h2");
-            maze_name.innerHTML="MAZE "+num;
-            b.appendChild(maze_name);
-
-
-            console.log(num);
-
-            var newimg = document.createElement("img");
-            newimg.src = "./maze_system_imagedata/origin_maze/origin_maze_"+num+".png";
-            newimg.width=300;
-            newimg.height=300;
-            b.appendChild(newimg);
-
-            var newimg = document.createElement("img");
-            newimg.src = "./maze_system_imagedata/origin_maze_correctpath/origin_maze_correctpath_"+num+".png";
-            newimg.width=300;
-            newimg.height=300;
-            b.appendChild(newimg);
-
-            var newimg = document.createElement("img");
-            newimg.src = "./maze_system_imagedata/thin_wall_maze/thin_wall_maze_"+num+".png";
-            newimg.width=300;
-            newimg.height=300;
-            b.appendChild(newimg);
-
-            var newimg = document.createElement("img");
-            newimg.src = "./maze_system_imagedata/red_arrow_maze/red_arrow_maze_"+num+".png";
-            newimg.width=300;
-            newimg.height=300;
-            b.appendChild(newimg);
-
-            var  newimg = document.createElement("img");
-            newimg.src = "./maze_system_imagedata/blue_arrow_maze/blue_arrow_maze_"+num+".png";
-            newimg.width=300;
-            newimg.height=300;
-            b.appendChild(newimg);
-
-            var newimg = document.createElement("img");
-            newimg.src = "./maze_system_imagedata/idea_maze/idea_maze_"+num+".png";
-            newimg.width=300;
-            newimg.height=300;
-            b.appendChild(newimg);
-
-            var newimg = document.createElement("img");
-            newimg.src = "./maze_system_imagedata/himohari_idea_maze/himohari_idea_maze_"+num+".png";
-            newimg.width=300;
-            newimg.height=300;
-            b.appendChild(newimg);
-
-          </script>
+        </script>
     </body>
 
 
