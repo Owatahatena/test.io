@@ -13,12 +13,6 @@
 
     <body id="bd">
         <script>
-            const output_csv = document.getElementById('color_list');
-            csv_data("./name_base64code_taiou.csv")
-        </script>
-
-
-        <script>
             for(let i=0; i< 4; i++){
                
             }
@@ -38,7 +32,7 @@
                         dataArray[i] = dataString[i].split(',');
                     }
                 });
-                request.open('GET', dataPath, true); // csvのパスを指定
+                request.open('GET', "./name_base64code_taiou.csv", true); // csvのパスを指定
                 request.send();
 
 
