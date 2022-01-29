@@ -28,6 +28,20 @@
           
             <script language="javascript" type="text/javascript">
               var b = document.getElementById("bd");
+                const request = new XMLHttpRequest(); // HTTPでファイルを読み込む
+                request.addEventListener('load', (event) => { // ロードさせ実行
+                    const response = event.target.responseText; // 受け取ったテキストを返す
+                    //csv_array(response); //csv_arrayの関数を実行
+                    const dataArray = []; //配列を用意
+                    const dataString = response.split('\n'); //改行で分割
+                    for (let i = 0; i < dataString.length; i++) { //あるだけループ
+                        dataArray[i] = dataString[i].split(',');
+                    }
+                });
+                request.open('GET', dataPath, true); // csvのパスを指定
+                request.send();
+
+
               for(let i=0; i<10; i++){
                   var new_button = document.createElement('button');
                   const newimg = document.createElement("img");
