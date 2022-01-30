@@ -19,9 +19,10 @@
         </script>
         <h1>MAZE SYSTEM</h1>
             <div id="color_list"></div>
-            <div id="div1"></div>
             <script language="javascript" type="text/javascript">
               var b = document.getElementById("bd");
+              
+
               const output_csv = document.getElementById('color_list');
               function csv_data(dataPath) {
                 console.log(dataPath);
@@ -34,35 +35,60 @@
                 request.send();
             }
 
+            function c(base64, event){
+                var url = "transition_page.html?num="+base64; 
+                console.log(url);
+                location.href = url;
+            };
+
             function csv_array(data) {
                 const dataArray = []; //配列を用意
                 const dataString = data.split('\n'); //改行で分割
-                for (let i = 0; i < dataString.length; i++) { //あるだけループ
-                    dataArray[i] = dataString[i].split(',');
-                }
-                output_csv.innerHTML = dataArray; //表示
-                console.log(dataArray);
+                for(let i = 0; i < dataString.length-1; i++){
+                  var num = dataString[i].split(',')[0];
+                  var div0 = document.createElement("div");
+                  div0.id = "div0"
+                  var div1 = document.createElement("div");
+                  div1.id = "div1";
+                  var div2 = document.createElement("div");
+                  div2.id = "div2";
+                  if (i != 0){
+                    var s3 = dataString[i].split(',')[3];
+                    //console.log(dataString[i].split(',')[1].slice(1));
+                    let base64 = dataString[i].split(',')[1].slice(1)+','+dataString[i].split(',')[2]+','+dataString[i].split(',')[3].slice(0,-2);
+                    var new_button = document.createElement('button');
+                    let url = "transition_page.html?num="+base64+"&code="+i;
+                    new_button.onclick = function(){
+                            console.log(url);
+                            location.href = url;      
+                    };
+                    const newimg = document.createElement("img");
+                    //console.log("../maze_system_imagedata/origin_maze_correctpath/origin_maze_correctpath_"+base64+".png");
+                    newimg.src = "../maze_system_imagedata/origin_maze_correctpath/origin_maze_correctpath_"+base64+".png";
+                    newimg.width=300;
+                    newimg.height=300;
+                    new_button.appendChild(newimg);
+                    div1.appendChild(new_button);
+                    var h3 = document.createElement('h3');
+                    h3.innerHTML=base64;
+
+                    var a = document.createElement("a");
+                    a.innerHTML = "DOWNLOAD MAZE DATA"
+                    a.download = "../maze_data/"+base64+".txt";
+                    a.href = "../maze_data/"+base64+".txt";
+
+                    div2.appendChild(h3);
+                    div2.appendChild(a);
+                    div0.appendChild(div1);
+                    div0.appendChild(div2);
+              }
+              b.appendChild(div0);
+            }
+
 
             }
 
             csv_data("./name_base64code_taiou.csv")
-
-
-              for(let i=0; i<10; i++){
-                  var new_button = document.createElement('button');
-                  const newimg = document.createElement("img");
-                  console.log("../maze_system_imagedata/origin_maze_correctpath/origin_maze_correctpath_"+i+".png");
-                  newimg.src = "../maze_system_imagedata/origin_maze_correctpath/origin_maze_correctpath_"+i+".png";
-                  newimg.width=300;
-                  newimg.height=300;
-                  new_button.appendChild(newimg)
-                  new_button.onclick = function(){
-                        var url = "transition_page.html?num=W19H19S1,1E17,17/+IiOzdxR50wN/RHSttSNsy7U2tAv/";
-                        location.href = url;
-                        console.log(url);
-                   };
-                  b.appendChild(new_button);
-              }
             </script>
 
     </body>

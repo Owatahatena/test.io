@@ -1,26 +1,20 @@
-button{
-    display:block;
-  }
-  img:first-child{
-    margin:0 auto;
-  }
-  img:nth-child(2){
-    margin-left:3em;
-  }
-  img:nth-child(3){
-    padding-left:10em;
-  }
-
+#div0{
+  overflow: hidden;
+}
+#div1{
+  float: left;
+  padding: 20px 30px;
+}
 
 img{
-    display:block;
-  }
-  img:first-child{
-    margin:0 auto;
-  }
-  img:nth-child(2){
-    margin-left:3em;
-  }
-  img:nth-child(3){
-    padding-left:10em;
-  }
+  display:block;
+}
+img:first-child{
+  margin:0 auto;
+}
+img:nth-child(2){
+  margin-left:3em;
+}
+img:nth-child(3){
+  padding-left:10em;
+}
