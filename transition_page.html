@@ -9,11 +9,15 @@
 
     <body id="bd">
         <h1>MAZE SYSTEM</h1>
-        <div id="color_list"></div>
 
+        <div id = "maze_title"></div>
+        <div id="color_list"></div>
+        <div id="maze_data"></div>
         <script language="javascript" type="text/javascript">
 
         const output_csv = document.getElementById('color_list');
+        const output_maze = document.getElementById('maze_data');
+
         function csv_data(dataPath) {
             console.log(dataPath);
             const request = new XMLHttpRequest(); // HTTPでファイルを読み込む
@@ -43,6 +47,35 @@
 
         }
 
+        function text_data(dataPath) {
+            console.log(dataPath);
+            const request = new XMLHttpRequest(); // HTTPでファイルを読み込む
+            
+            request.addEventListener('load', (event) => { // ロードさせ実行
+                const response = event.target.responseText; // 受け取ったテキストを返す
+                console.log("respose",response);
+                text_array(response); //csv_arrayの関数を実行
+            });
+            request.open('GET', dataPath, true); // csvのパスを指定
+            request.send();
+        }
+
+        function text_array(data) {
+            output_maze.innerHTML = "<h4> maze data stings </h4>"
+            var url = new URL(window.location.href);
+            var params = url.searchParams;
+            var code = params.get('code');
+            const dataArray = []; //配列を用意
+            const dataString = data.split('\n'); //改行で分割
+            console.log(dataString);
+            for (let i = 0; i < dataString.length; i++) { //あるだけループ
+                //dataArray[i] = dataString[i].split(',');
+                output_maze.innerHTML += dataString[i]+"<br>";
+                
+            }
+            //output_maze.innerHTML = "aaaaaaadalkdapdksapo"
+        }
+
         csv_data("./MasterMazeData_features_df_17.csv")
         var url = new URL(window.location.href);
         var params = url.searchParams;
@@ -51,10 +84,13 @@
         var code = params.get('code');
         console.log(code);
 
+        text_data("./maze_data/"+num+'.txt')
+        console.log("atsatratra");
+        var mt = document.getElementById("maze_title");
         var maze_name = document.createElement("h2");
         maze_name.innerHTML="MAZE "+num;
-        b.appendChild(maze_name);
-
+        mt.appendChild(maze_name);
+        
 
         console.log(num);
 
@@ -102,8 +138,8 @@
 
         var newimg = document.createElement("img");
         newimg.src = "../maze_system_imagedata/tree_graph/tree_graph_"+num+".png";
-        newimg.width=200;
-        newimg.height=600;
+        //newimg.width=50;
+        //newimg.height=60;
         b.appendChild(newimg);
 
         </script>

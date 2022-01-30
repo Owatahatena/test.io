@@ -1,0 +1,30 @@
+.sizea{
+    display:block;
+  }
+
+  .img_frame {
+    display: inline-block;
+    text-align: center;
+    height: 450px;
+  }
+
+p{
+    width: 450px;
+    overflow-wrap: break-word;
+    
+}
+
+
+  #setumeibun{
+    margin-top: 30px;
+  }
+
+  .using_contents{
+      margin-top: 50px;
+  }
+  .using_contents>h1{
+    background-color: chartreuse;
+  }
+
+
+
