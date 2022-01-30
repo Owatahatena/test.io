@@ -1,4 +1,4 @@
-,maze_name,turn_num,L_num,L_size,L_size_std,R_num,R_size,R_size_std,boader_l,neighbor_sum,correct_path_len,turn_pos_num,dead_end_num,T_num,cross_num,straight_len_std,straight_num,gorl_depth,depth_std,depth_max,depth_mean
+,generation algorithm,turn_num,L_num,L_size,L_size_std,R_num,R_size,R_size_std,boader_l,neighbor_sum,correct_path_len,turn_pos_num,dead_end_num,T_num,cross_num,straight_len_std,straight_num,gorl_depth,depth_std,depth_max,depth_mean
 0,AldousBroder,14,1,22,0,3,90,29.02872141,114,2,49,36,11,9,0,105,55,48,20.9414769,64,42
 1,AldousBroder,15,3,46,8.37987006,5,70,14.02854233,165,8,45,36,11,9,0,105,55,44,15.95033615,60,34.36363636
 2,AldousBroder,13,1,6,0,5,106,13.77534029,147,6,49,38,12,10,0,98,58,48,20.34903765,64,37.5
