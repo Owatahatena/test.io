@@ -64,7 +64,7 @@
                     };
                     const newimg = document.createElement("img");
                     //console.log("../maze_system_imagedata/origin_maze_correctpath/origin_maze_correctpath_"+base64+".png");
-                    newimg.src = "../maze_system_imagedata/origin_maze_correctpath/origin_maze_correctpath_"+base64+".png";
+                    newimg.src = "./maze_system_imagedata/origin_maze_correctpath/origin_maze_correctpath_"+base64+".png";
                     newimg.width=300;
                     newimg.height=300;
                     new_button.appendChild(newimg);
@@ -74,8 +74,8 @@
 
                     var a = document.createElement("a");
                     a.innerHTML = "DOWNLOAD MAZE DATA"
-                    a.download = "../maze_data/"+base64+".txt";
-                    a.href = "../maze_data/"+base64+".txt";
+                    a.download = "./maze_data/"+base64+".txt";
+                    a.href = "./maze_data/"+base64+".txt";
 
                     div2.appendChild(h3);
                     div2.appendChild(a);
